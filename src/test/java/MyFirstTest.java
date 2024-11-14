@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.openqa.selenium.By;
@@ -26,5 +27,16 @@ public class MyFirstTest {
         WebElement fieldNameA = driver.findElement(fieldName);
         fieldNameA.click();
         fieldNameA.sendKeys("Testing");
+        By fieldEmail = By.id("input-email-consultation");
+        WebElement fieldEmailA = driver.findElement(fieldEmail);
+        fieldEmailA.click();
+        fieldEmailA.sendKeys("test@gmail.com");
+        By fieldTel = By.id("input-tel-consultation");
+        WebElement fieldTelA = driver.findElement(fieldTel);
+        fieldTelA.click();
+        fieldTelA.sendKeys("1234567");
+    }
+    @AfterTest public void Quit(){
+        driver.quit();
     }
 }
